@@ -1,0 +1,128 @@
+2020-05-09 22:29:27.970  INFO 26100 --- [main] com.joss.bundaegi.BundaegiApplication    : Starting BundaegiApplication on LAPTOP-QLDHOSBS with PID 26100 (C:\Users\hwany\git\bundaegi\target\classes started by hwany in C:\Users\hwany\git\bundaegi)
+2020-05-09 22:29:27.978  INFO 26100 --- [main] com.joss.bundaegi.BundaegiApplication    : The following profiles are active: prod
+2020-05-09 22:29:31.356  INFO 26100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-09 22:29:31.375  INFO 26100 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 22:29:31.376  INFO 26100 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-09 22:29:31.380  INFO 26100 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-09 22:29:31.380  INFO 26100 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-09 22:29:31.381  INFO 26100 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-09 22:29:31.389  INFO 26100 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-09 22:29:31.872  INFO 26100 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-09 22:29:32.464  INFO 26100 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-09 22:29:32.837  INFO 26100 --- [main] log4jdbc.log4j2                          : 1. Connection opened. {executed in 315ms} 
+2020-05-09 22:29:32.841  INFO 26100 --- [main] log4jdbc.log4j2                          : 1. Connection.new Connection returned 
+2020-05-09 22:29:32.842  INFO 26100 --- [main] log4jdbc.log4j2                          : 1. Connection.getNetworkTimeout() returned 0
+2020-05-09 22:29:32.848  INFO 26100 --- [main] log4jdbc.log4j2                          : 1. Connection.isReadOnly() returned false
+2020-05-09 22:29:32.849  INFO 26100 --- [main] log4jdbc.log4j2                          : 1. Connection.getAutoCommit() returned true
+2020-05-09 22:29:32.854  INFO 26100 --- [main] log4jdbc.log4j2                          : 1. Connection.isValid(1) returned true
+2020-05-09 22:29:32.859  INFO 26100 --- [main] log4jdbc.log4j2                          : 1. Connection.getTransactionIsolation() returned 4
+2020-05-09 22:29:32.866  INFO 26100 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-09 22:29:32.866  INFO 26100 --- [main] com.joss.bundaegi.config.DatabaseConfig  : datasource : HikariDataSource (HikariPool-1)
+2020-05-09 22:29:33.012  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 2. Connection opened. {executed in 44ms} 
+2020-05-09 22:29:33.012  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 2. Connection.new Connection returned 
+2020-05-09 22:29:33.017  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 2. Connection.isReadOnly() returned false
+2020-05-09 22:29:33.018  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 2. Connection.getAutoCommit() returned true
+2020-05-09 22:29:33.060  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 3. Connection opened. {executed in 41ms} 
+2020-05-09 22:29:33.061  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 3. Connection.new Connection returned 
+2020-05-09 22:29:33.067  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 3. Connection.isReadOnly() returned false
+2020-05-09 22:29:33.068  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 3. Connection.getAutoCommit() returned true
+2020-05-09 22:29:33.242  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 4. Connection opened. {executed in 172ms} 
+2020-05-09 22:29:33.242  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 4. Connection.new Connection returned 
+2020-05-09 22:29:33.247  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 4. Connection.isReadOnly() returned false
+2020-05-09 22:29:33.248  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 4. Connection.getAutoCommit() returned true
+2020-05-09 22:29:33.292  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 5. Connection opened. {executed in 43ms} 
+2020-05-09 22:29:33.293  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 5. Connection.new Connection returned 
+2020-05-09 22:29:33.298  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 5. Connection.isReadOnly() returned false
+2020-05-09 22:29:33.299  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 5. Connection.getAutoCommit() returned true
+2020-05-09 22:29:33.336  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 6. Connection opened. {executed in 37ms} 
+2020-05-09 22:29:33.338  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 6. Connection.new Connection returned 
+2020-05-09 22:29:33.343  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 6. Connection.isReadOnly() returned false
+2020-05-09 22:29:33.343  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 6. Connection.getAutoCommit() returned true
+2020-05-09 22:29:33.382  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 7. Connection opened. {executed in 38ms} 
+2020-05-09 22:29:33.382  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 7. Connection.new Connection returned 
+2020-05-09 22:29:33.387  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 7. Connection.isReadOnly() returned false
+2020-05-09 22:29:33.387  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 7. Connection.getAutoCommit() returned true
+2020-05-09 22:29:33.423  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 8. Connection opened. {executed in 34ms} 
+2020-05-09 22:29:33.423  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 8. Connection.new Connection returned 
+2020-05-09 22:29:33.427  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 8. Connection.isReadOnly() returned false
+2020-05-09 22:29:33.428  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 8. Connection.getAutoCommit() returned true
+2020-05-09 22:29:33.467  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 9. Connection opened. {executed in 38ms} 
+2020-05-09 22:29:33.468  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 9. Connection.new Connection returned 
+2020-05-09 22:29:33.473  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 9. Connection.isReadOnly() returned false
+2020-05-09 22:29:33.474  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 9. Connection.getAutoCommit() returned true
+2020-05-09 22:29:33.516  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 10. Connection opened. {executed in 41ms} 
+2020-05-09 22:29:33.516  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 10. Connection.new Connection returned 
+2020-05-09 22:29:33.523  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 10. Connection.isReadOnly() returned false
+2020-05-09 22:29:33.526  INFO 26100 --- [HikariPool-1 connection adder] log4jdbc.log4j2                          : 10. Connection.getAutoCommit() returned true
+2020-05-09 22:29:33.723  INFO 26100 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-09 22:29:34.010  INFO 26100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-05-09 22:29:34.017  INFO 26100 --- [main] com.joss.bundaegi.BundaegiApplication    : Started BundaegiApplication in 7.173 seconds (JVM running for 10.01)
+2020-05-09 22:30:33.487  INFO 26100 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-09 22:31:00.203  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. Connection.isValid(5) returned true
+2020-05-09 22:31:00.212  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. Connection.getAutoCommit() returned true
+2020-05-09 22:31:00.216  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. Connection.setAutoCommit(false) returned 
+2020-05-09 22:31:00.242  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. Connection.getAutoCommit() returned false
+2020-05-09 22:31:00.260  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. PreparedStatement.new PreparedStatement returned 
+2020-05-09 22:31:00.260  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. Connection.prepareStatement(-- 사용자 조회
+         
+            SELECT
+            user_id,
+            user_password,
+            user_name,
+            user_phone_number,
+            com.com_name AS user_type
+            FROM user
+            INNER JOIN common com ON user_type = com.com_id) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@6d0f44aa
+2020-05-09 22:31:00.263  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. PreparedStatement.setQueryTimeout(300) returned 
+2020-05-09 22:31:00.279  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. -- 사용자 조회 SELECT user_id, user_password, user_name, user_phone_number, com.com_name AS user_type 
+FROM user INNER JOIN common com ON user_type = com.com_id  {executed in 14 ms}
+2020-05-09 22:31:00.279  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. PreparedStatement.execute() returned true
+2020-05-09 22:31:00.281  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.new ResultSet returned 
+2020-05-09 22:31:00.282  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. PreparedStatement.getResultSet() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@1356a697
+2020-05-09 22:31:00.286  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getMetaData() returned com.mysql.cj.jdbc.result.ResultSetMetaData@3d6ea800 - Field level information: 
+	com.mysql.cj.result.Field@277a72d7[dbName=BDG,tableName=user,originalTableName=user,columnName=user_id,originalColumnName=user_id,mysqlType=253(FIELD_TYPE_VARCHAR),sqlType=12,flags= PRIMARY_KEY BINARY, charsetIndex=83, charsetName=UTF-8]
+	com.mysql.cj.result.Field@130d9b2f[dbName=BDG,tableName=user,originalTableName=user,columnName=user_password,originalColumnName=user_password,mysqlType=253(FIELD_TYPE_VARCHAR),sqlType=12,flags= BINARY, charsetIndex=83, charsetName=UTF-8]
+	com.mysql.cj.result.Field@1ef62b6b[dbName=BDG,tableName=user,originalTableName=user,columnName=user_name,originalColumnName=user_name,mysqlType=253(FIELD_TYPE_VARCHAR),sqlType=12,flags= BINARY, charsetIndex=83, charsetName=UTF-8]
+	com.mysql.cj.result.Field@5610ae1d[dbName=BDG,tableName=user,originalTableName=user,columnName=user_phone_number,originalColumnName=user_phone_number,mysqlType=253(FIELD_TYPE_VARCHAR),sqlType=12,flags= BINARY, charsetIndex=83, charsetName=UTF-8]
+	com.mysql.cj.result.Field@228892c2[dbName=BDG,tableName=com,originalTableName=common,columnName=user_type,originalColumnName=com_name,mysqlType=253(FIELD_TYPE_VARCHAR),sqlType=12,flags= BINARY, charsetIndex=83, charsetName=UTF-8]
+2020-05-09 22:31:00.288  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getType() returned 1003
+2020-05-09 22:31:00.289  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.isClosed() returned false
+2020-05-09 22:31:00.289  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.next() returned true
+2020-05-09 22:31:00.291  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getString(user_id) returned admin
+2020-05-09 22:31:00.292  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getString(user_password) returned admin123
+2020-05-09 22:31:00.292  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getString(user_name) returned 관리자
+2020-05-09 22:31:00.292  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getString(user_phone_number) returned 
+2020-05-09 22:31:00.292  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getString(user_type) returned 직원
+2020-05-09 22:31:00.292  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.isClosed() returned false
+2020-05-09 22:31:00.292  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.next() returned true
+2020-05-09 22:31:00.293  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getString(user_id) returned test
+2020-05-09 22:31:00.293  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getString(user_password) returned test123
+2020-05-09 22:31:00.293  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getString(user_name) returned 테스터
+2020-05-09 22:31:00.293  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getString(user_phone_number) returned 
+2020-05-09 22:31:00.293  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getString(user_type) returned 사용자
+2020-05-09 22:31:00.293  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.isClosed() returned false
+2020-05-09 22:31:00.293  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.next() returned true
+2020-05-09 22:31:00.293  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getString(user_id) returned yjyj
+2020-05-09 22:31:00.293  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getString(user_password) returned 1234
+2020-05-09 22:31:00.293  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getString(user_name) returned 손님1
+2020-05-09 22:31:00.293  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getString(user_phone_number) returned 01011112222
+2020-05-09 22:31:00.293  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.getString(user_type) returned 사용자
+2020-05-09 22:31:00.293  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.isClosed() returned false
+2020-05-09 22:31:00.295  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 
+|--------|--------------|----------|------------------|---------|
+|user_id |user_password |user_name |user_phone_number |com_name |
+|--------|--------------|----------|------------------|---------|
+|admin   |admin123      |관리자       |                  |직원       |
+|test    |test123       |테스터       |                  |사용자      |
+|yjyj    |1234          |손님1       |01011112222       |사용자      |
+|--------|--------------|----------|------------------|---------|
+
+2020-05-09 22:31:00.296  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.next() returned false
+2020-05-09 22:31:00.296  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. ResultSet.close() returned void
+2020-05-09 22:31:00.296  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. Connection.getMetaData() returned com.mysql.cj.jdbc.DatabaseMetaData@115b44c0
+2020-05-09 22:31:00.298  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. PreparedStatement.getMoreResults() returned false
+2020-05-09 22:31:00.298  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. PreparedStatement.getUpdateCount() returned -1
+2020-05-09 22:31:00.299  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. PreparedStatement.close() returned 
+2020-05-09 22:31:00.304  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. Connection.commit() returned 
+2020-05-09 22:31:00.308  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. Connection.setAutoCommit(true) returned 
+2020-05-09 22:31:00.311  INFO 26100 --- [http-nio-8080-exec-5] log4jdbc.log4j2                          : 1. Connection.clearWarnings() returned 
