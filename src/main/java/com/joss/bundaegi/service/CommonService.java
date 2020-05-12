@@ -24,7 +24,6 @@ public class CommonService {
         }catch (Exception e){
             response = new JSONResponse<>(0,"fail.select",null);
         }
-        System.out.println("getAllUser: " + response.getMsg());
         return response;
     }
     public JSONResponse<UserDomain> getUserById(final String id) {

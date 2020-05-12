@@ -1,0 +1,62 @@
+INFO  20-05-12 15:53:16[main] [BundaegiApplication:55] - Starting BundaegiApplication on LAPTOP-QLDHOSBS with PID 23336 (C:\Users\hwany\git\bundaegi\target\classes started by hwany in C:\Users\hwany\git\bundaegi)
+INFO  20-05-12 15:53:16[main] [BundaegiApplication:655] - The following profiles are active: prod
+INFO  20-05-12 15:53:18[main] [TomcatWebServer:92] - Tomcat initialized with port(s): 8080 (http)
+INFO  20-05-12 15:53:18[main] [Http11NioProtocol:173] - Initializing ProtocolHandler ["http-nio-8080"]
+INFO  20-05-12 15:53:18[main] [StandardService:173] - Starting service [Tomcat]
+INFO  20-05-12 15:53:18[main] [StandardEngine:173] - Starting Servlet engine: [Apache Tomcat/9.0.33]
+INFO  20-05-12 15:53:18[main] [AprLifecycleListener:173] - Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+INFO  20-05-12 15:53:18[main] [AprLifecycleListener:173] - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+INFO  20-05-12 15:53:18[main] [AprLifecycleListener:173] - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+INFO  20-05-12 15:53:18[main] [AprLifecycleListener:173] - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+INFO  20-05-12 15:53:18[main] [[/]:173] - Initializing Spring embedded WebApplicationContext
+INFO  20-05-12 15:53:18[main] [ContextLoader:284] - Root WebApplicationContext: initialization completed in 1885 ms
+INFO  20-05-12 15:53:18[main] [HikariDataSource:80] - HikariPool-1 - Starting...
+INFO  20-05-12 15:53:18[main] [log4j2:365] - 1. Connection opened. {executed in 141ms} 
+INFO  20-05-12 15:53:18[main] [log4j2:197] - 1. Connection.new Connection returned 
+INFO  20-05-12 15:53:18[main] [log4j2:197] - 1. Connection.getNetworkTimeout() returned 0
+INFO  20-05-12 15:53:18[main] [log4j2:197] - 1. Connection.isReadOnly() returned false
+INFO  20-05-12 15:53:18[main] [log4j2:197] - 1. Connection.getAutoCommit() returned true
+INFO  20-05-12 15:53:18[main] [log4j2:197] - 1. Connection.isValid(1) returned true
+INFO  20-05-12 15:53:18[main] [log4j2:197] - 1. Connection.getTransactionIsolation() returned 4
+INFO  20-05-12 15:53:18[main] [HikariDataSource:82] - HikariPool-1 - Start completed.
+INFO  20-05-12 15:53:18[main] [DatabaseConfig:33] - datasource : HikariDataSource (HikariPool-1)
+INFO  20-05-12 15:53:18[HikariPool-1 connection adder] [log4j2:365] - 2. Connection opened. {executed in 44ms} 
+INFO  20-05-12 15:53:18[HikariPool-1 connection adder] [log4j2:197] - 2. Connection.new Connection returned 
+INFO  20-05-12 15:53:18[HikariPool-1 connection adder] [log4j2:197] - 2. Connection.isReadOnly() returned false
+INFO  20-05-12 15:53:18[HikariPool-1 connection adder] [log4j2:197] - 2. Connection.getAutoCommit() returned true
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:365] - 3. Connection opened. {executed in 46ms} 
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 3. Connection.new Connection returned 
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 3. Connection.isReadOnly() returned false
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 3. Connection.getAutoCommit() returned true
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:365] - 4. Connection opened. {executed in 52ms} 
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 4. Connection.new Connection returned 
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 4. Connection.isReadOnly() returned false
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 4. Connection.getAutoCommit() returned true
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:365] - 5. Connection opened. {executed in 52ms} 
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 5. Connection.new Connection returned 
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 5. Connection.isReadOnly() returned false
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 5. Connection.getAutoCommit() returned true
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:365] - 6. Connection opened. {executed in 48ms} 
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 6. Connection.new Connection returned 
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 6. Connection.isReadOnly() returned false
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 6. Connection.getAutoCommit() returned true
+INFO  20-05-12 15:53:19[main] [ThreadPoolTaskExecutor:181] - Initializing ExecutorService 'applicationTaskExecutor'
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:365] - 7. Connection opened. {executed in 41ms} 
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 7. Connection.new Connection returned 
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 7. Connection.isReadOnly() returned false
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 7. Connection.getAutoCommit() returned true
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:365] - 8. Connection opened. {executed in 51ms} 
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 8. Connection.new Connection returned 
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 8. Connection.isReadOnly() returned false
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 8. Connection.getAutoCommit() returned true
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:365] - 9. Connection opened. {executed in 47ms} 
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 9. Connection.new Connection returned 
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 9. Connection.isReadOnly() returned false
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 9. Connection.getAutoCommit() returned true
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:365] - 10. Connection opened. {executed in 44ms} 
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 10. Connection.new Connection returned 
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 10. Connection.isReadOnly() returned false
+INFO  20-05-12 15:53:19[HikariPool-1 connection adder] [log4j2:197] - 10. Connection.getAutoCommit() returned true
+INFO  20-05-12 15:53:19[main] [Http11NioProtocol:173] - Starting ProtocolHandler ["http-nio-8080"]
+INFO  20-05-12 15:53:19[main] [TomcatWebServer:204] - Tomcat started on port(s): 8080 (http) with context path ''
+INFO  20-05-12 15:53:19[main] [BundaegiApplication:61] - Started BundaegiApplication in 4.189 seconds (JVM running for 7.129)
