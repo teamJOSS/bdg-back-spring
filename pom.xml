@@ -64,6 +64,13 @@
             <version>1.16</version>
         </dependency>
 
+        <!-- JSON 파싱 -->
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/net.rakugakibox.util/yaml-resource-bundle (다국어사용을 위한)-->
         <dependency>
             <groupId>net.rakugakibox.util</groupId>

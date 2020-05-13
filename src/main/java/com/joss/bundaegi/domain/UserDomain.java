@@ -1,4 +1,4 @@
-package com.joss.bundaegi.domain.Common;
+package com.joss.bundaegi.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

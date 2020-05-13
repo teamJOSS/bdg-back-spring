@@ -30,6 +30,7 @@ build/
 ### VS Code ###
 .vscode/
 
-### ·Î±×ÆÄÀÏ ###
+### ë¡œê·¸íŒŒì¼ ###
 /logs/log/
 .log
+/.metadata/
