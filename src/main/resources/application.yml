@@ -13,13 +13,7 @@ mybatis:
   type-aliases-package: com.joss.bundaegi/mapper
   mapper-locations: com.joss.bundaegi/mapper/*.xml
 
-logging:
-  file:
-    path: /logs
-    name: application-debug.log
-
 # local
-
 ---
 server:
   port: 8081

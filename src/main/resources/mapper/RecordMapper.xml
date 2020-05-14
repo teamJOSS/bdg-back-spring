@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.joss.bundaegi.mapper.RecordMapper">
+    <select id="getRecordById" parameterType="map" resultType="com.joss.bundaegi.domain.RecordDomain">
+        -- 누적 진료 조회
+        SELECT record_sequence
+        , record_user_id
+        , record_emp_id
+        , record_clinic_id
+        , clinic_name AS record_clinic_name
+        , IFNULL(clinic_phone_number,clinic_phone_number2) AS record_clinic_phone
+        , (SELECT com_name FROM common WHERE com_group_id = 'RECORD_RESULT' AND com_id = record_result_id) AS record_result_name
+        , record_date
+        , record_udate
+        FROM clinicrecord
+        INNER JOIN clinic ON clinic_id = record_clinic_id
+        WHERE record_user_id = #{userId}
+    </select>
+
+    <insert id="createRecordInfo" parameterType="map">
+        INSERT INTO clinicrecord(record_user_id, record_emp_id,record_clinic_id,record_date)
+        SELECT user_id AS record_user_id
+        , CASE WHEN user_type = 'E' THEN user_id ELSE '' END AS record_emp_id
+        , #{clinicId} AS record_clinic_id
+        , NOW() AS record_date
+        FROM user
+        WHERE user_id = #{userId};
+    </insert>
+
+    <update id="updateRecordResult">
+        -- 진료기록결과 업데이트
+        UPDATE clinicrecord
+        SET record_result_id = #{resultType},
+            record_udate = NOW()
+        WHERE 1 = 1
+        AND record_user_id = #{userId}
+        AND record_clinic_id = #{clinicId}
+    </update>
+</mapper>

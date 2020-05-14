@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Arrays;
 
 @RestController
+@RequestMapping("/api")
 public class PingController {
     @Autowired
     Environment environment;
