@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -35,7 +36,8 @@ public class ClinicController {
 
     // 주변 진료소 조회
     @GetMapping(value = "/clinic/location/{distance}")
-    public JSONResponse<List<ClinicDomain>> getLocationFromAddr(@PathVariable(value = "distance") final float distance, LocationDomain locationDomain) {
-        return clinicService.getClinicByDistance(locationDomain,distance);
+    public JSONResponse<List<ClinicDomain>> getLocationFromAddr(@PathVariable(value = "distance") final float distance,
+                                                                @RequestBody Map<String,Object> paramMap) {
+        return clinicService.getClinicByDistance(paramMap,distance);
     }
 }

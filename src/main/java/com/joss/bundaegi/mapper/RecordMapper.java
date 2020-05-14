@@ -1,7 +1,6 @@
 package com.joss.bundaegi.mapper;
 
-import com.joss.bundaegi.domain.ClinicDomain;
-import com.joss.bundaegi.domain.UserDomain;
+import com.joss.bundaegi.domain.RecordDomain;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -12,7 +11,8 @@ import java.util.Map;
 @Mapper
 @Component
 @Repository
-public interface ClinicMapper {
-    List<ClinicDomain> getClinicByDistance(Map<String,Object> paramMap);
-    int updateLocationInfo(String key, float lat, float lon);
+public interface RecordMapper {
+    List<RecordDomain> getRecordById(String id);
+    int createRecordInfo(Map<String,Object> paramMap);
+    int updateRecordResult(Map<String,Object> paramMap);
 }

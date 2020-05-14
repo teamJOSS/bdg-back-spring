@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.joss.bundaegi.mapper.NoticeMapper">
+    <select id="getNoticeInfo" resultType="com.joss.bundaegi.domain.NoticeDomain">
+        -- 공지사항 조회(오늘로부터 1년 이내)
+        SELECT
+        notice_sequence
+        ,notice_title
+        ,notice_content
+        ,notice_create_date
+        ,notice_create_user
+        FROM notice
+        WHERE 1=1 AND DATE_FORMAT(notice_create_date,'%Y%m%d') <![CDATA[>=]]> DATE_FORMAT(DATE_ADD(NOW(), INTERVAL -1 YEAR),'%Y%m%d');
+    </select>
+    <insert id="createNoticeInfo" parameterType="map">
+        INSERT INTO notice(notice_title, notice_content,notice_create_date,notice_create_user)
+        SELECT #{noticeTitle} AS notice_title
+        , #{noticeContent} AS notice_content
+        , NOW() AS notice_create_date
+        , user_name AS notice_create_user
+        FROM user
+        WHERE user_id = #{noticeCreateUser};
+    </insert>
+</mapper>

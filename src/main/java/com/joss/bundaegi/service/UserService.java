@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 @Transactional
@@ -38,12 +39,12 @@ public class UserService {
         return response;
     }
 
-    public JSONResponse<String> createUser(final UserDomain newUser){
+    public JSONResponse<String> createUser(Map<String,Object> paramMap){
         JSONResponse<String> response;
         try{
-            UserDomain user = userMapper.getUser(newUser.getUserId());
-            if(user != null) {
-                int result = userMapper.createUser(newUser);
+            UserDomain user = userMapper.getUser((String) paramMap.get("userId"));
+            if(user == null) {
+                int result = userMapper.createUser(paramMap);
                 if(result == 1) response = new JSONResponse<>(1,"succ.reg",null);
                 else throw new Exception();
             }

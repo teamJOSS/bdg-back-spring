@@ -3,7 +3,7 @@
 
 <mapper namespace="com.joss.bundaegi.mapper.UserMapper">
     <select id="getAllUser" resultType="com.joss.bundaegi.domain.UserDomain">
-        -- 사용자 조회
+        -- 전체 사용자 조회
         SELECT
             user_id,
             user_password,
@@ -28,14 +28,14 @@
         AND user_id = '${id}'
     </select>
 
-    <insert id="creatUser" parameterType="com.joss.bundaegi.domain.UserDomain">
+    <insert id="createUser" parameterType="map">
         -- APP 사용자 회원가입
         INSERT INTO user(user_id, user_password, user_name, user_phone_number, user_type)
-        SELECT '${userId}' AS user_id
-        ,'${userPassword}' AS user_password
-        ,'${userName}' AS user_name
-        ,'${userPhoneNumber}' AS user_phone_number
-        ,'${userType}' AS user_type;
+        SELECT #{userId} AS user_id
+        ,#{userPassword} AS user_password
+        ,#{userName} AS user_name
+        ,#{userPhoneNumber} AS user_phone_number
+        ,#{userType} AS user_type;
         -- VALUES("admin", "admin123","관리자","","E");
     </insert>
 </mapper>

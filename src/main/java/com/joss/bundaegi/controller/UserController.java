@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -27,8 +28,8 @@ public class UserController {
 
     // 사용자 등록
     @PostMapping(value = "/user")
-    public JSONResponse<String> createUser(@RequestBody UserDomain user) {
-        return userService.createUser(user);
+    public JSONResponse<String> createUser(@RequestBody Map<String,Object> paramMap) {
+        return userService.createUser(paramMap);
     }
 
 //    // @TODO 로그인 조회

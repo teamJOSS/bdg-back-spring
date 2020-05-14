@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 @Component
@@ -13,5 +14,5 @@ import java.util.List;
 public interface UserMapper {
     List<UserDomain> getAllUser();
     UserDomain getUser(String id);
-    int createUser(UserDomain user);
+    int createUser(Map<String,Object> paramMap);
 }

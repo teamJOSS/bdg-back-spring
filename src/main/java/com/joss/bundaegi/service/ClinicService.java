@@ -4,11 +4,13 @@ import com.joss.bundaegi.domain.ClinicDomain;
 import com.joss.bundaegi.domain.LocationDomain;
 import com.joss.bundaegi.domain.Response.JSONResponse;
 import com.joss.bundaegi.mapper.ClinicMapper;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 @Transactional
@@ -17,10 +19,12 @@ public class ClinicService {
     ClinicMapper clinicMapper;
 
     // 주변 진료소 조회
-    public JSONResponse<List<ClinicDomain>> getClinicByDistance(LocationDomain location, float distance) {
+    public JSONResponse<List<ClinicDomain>> getClinicByDistance(Map<String,Object> paramMap, float distance) {
         JSONResponse<List<ClinicDomain>> response;
         try{
-            List<ClinicDomain> clinics = clinicMapper.getClinicByDistance(location.getLat(),location.getLon(),distance);
+            paramMap.put("distance",distance);
+            List<ClinicDomain> clinics = clinicMapper.getClinicByDistance(paramMap);
+            System.out.println(clinics.size());
             if(clinics.size() > 0) response = new JSONResponse<>(1,"succ.select",clinics);
             else throw new Exception();
         }catch (Exception e){
