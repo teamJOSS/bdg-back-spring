@@ -20,4 +20,6 @@ public class ClinicDomain {
     String clinicType;
     float clinicLat;
     float clinicLon;
+    float clinicDistance;
+    int clinicWaitCount;
 }

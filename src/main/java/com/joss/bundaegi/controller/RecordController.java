@@ -21,15 +21,16 @@ public class RecordController {
         return recordService.getRecordById(id);
     }
 
-    // 진료기록 저장
-    @PostMapping(value = "/clinic/record")
-    public JSONResponse<Integer> createRecordInfo(@RequestBody Map<String,Object> paramMap){
-        return recordService.createRecordInfo(paramMap);
-    }
-
-    // 진료기록 업데이트
-    @PatchMapping(value = "/clinic/record")
-    public JSONResponse<Integer> setRecordResult(@RequestBody  Map<String,Object> paramMap) {
-        return recordService.updateRecordResult(paramMap);
-    }
+    // @TODO APP에서 할 필요 없을 듯
+//    // 진료기록 저장
+//    @PostMapping(value = "/clinic/record")
+//    public JSONResponse<Integer> createRecordInfo(@RequestParam Map<String,Object> paramMap){
+//        return recordService.createRecordInfo(paramMap);
+//    }
+//
+//    // 진료기록 업데이트
+//    @PatchMapping(value = "/clinic/record")
+//    public JSONResponse<Integer> setRecordResult(@RequestParam  Map<String,Object> paramMap) {
+//        return recordService.updateRecordResult(paramMap);
+//    }
 }

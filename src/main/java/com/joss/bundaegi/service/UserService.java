@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-@Transactional
 public class UserService {
     @Autowired
     UserMapper userMapper;
@@ -38,7 +37,7 @@ public class UserService {
         }
         return response;
     }
-
+    @Transactional
     public JSONResponse<String> createUser(Map<String,Object> paramMap){
         JSONResponse<String> response;
         try{

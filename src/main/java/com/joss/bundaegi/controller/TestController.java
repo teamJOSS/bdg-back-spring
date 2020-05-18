@@ -3,22 +3,25 @@ package com.joss.bundaegi.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Arrays;
 
-@RestController
-@RequestMapping("/api")
-public class PingController {
+@Controller
+public class TestController {
     @Autowired
     Environment environment;
 
-    @RequestMapping(value = "/ping", method = RequestMethod.GET)
+    @GetMapping(value = "/profiles")
     @ResponseStatus(value = HttpStatus.OK)
     public String Running(){
         return Arrays.toString(environment.getActiveProfiles());
+    }
+
+    @RequestMapping(value = "/map")
+    public ModelAndView test(){
+        return new ModelAndView("test");
     }
 }

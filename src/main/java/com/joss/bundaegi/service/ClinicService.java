@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-@Transactional
 public class ClinicService {
     @Autowired
     ClinicMapper clinicMapper;
@@ -32,6 +31,19 @@ public class ClinicService {
         }
         return response;
     }
+    // 진료소 ID로 진료소 조회
+    public JSONResponse<ClinicDomain> getClinicById(String clinicId) {
+        JSONResponse<ClinicDomain> response;
+        try{
+            ClinicDomain clinic = clinicMapper.getClinicById(clinicId);
+            if(clinic != null) response = new JSONResponse<>(1,"succ.select",clinic);
+            else throw new Exception();
+        }catch (Exception e){
+            response = new JSONResponse<>(0,"fail.select",null);
+        }
+        return response;
+    }
+    @Transactional
     public int updateLocationInfo(String key, float lat, float lon){
         try{
             int result = clinicMapper.updateLocationInfo(key,lat,lon);

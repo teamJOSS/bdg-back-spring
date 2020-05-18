@@ -14,5 +14,6 @@ import java.util.Map;
 @Repository
 public interface ClinicMapper {
     List<ClinicDomain> getClinicByDistance(Map<String,Object> paramMap);
+    ClinicDomain getClinicById(String clinicId);
     int updateLocationInfo(String key, float lat, float lon);
 }

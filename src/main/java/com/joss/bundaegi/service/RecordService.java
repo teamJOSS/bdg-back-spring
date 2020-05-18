@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-@Transactional
 public class RecordService {
     @Autowired
     RecordMapper recordMapper;
@@ -28,7 +27,7 @@ public class RecordService {
         }
         return response;
     }
-
+    @Transactional
     // 진료기록 생성
     public JSONResponse<Integer> createRecordInfo(Map<String,Object> paramMap){
         JSONResponse<Integer> response;
@@ -41,7 +40,7 @@ public class RecordService {
         }
         return response;
     }
-
+    @Transactional
     // 진료결과 업데이트
     public JSONResponse<Integer> updateRecordResult(Map<String,Object> paramMap){
         JSONResponse<Integer> response;

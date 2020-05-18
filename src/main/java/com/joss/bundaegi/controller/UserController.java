@@ -20,6 +20,7 @@ public class UserController {
     public JSONResponse<List<UserDomain>> getAllUser() {
         return userService.getAllUser();
     }
+
     // 사용자 조회
     @GetMapping(value = "/user/{id}")
     public JSONResponse<UserDomain> getUserById(@PathVariable("id") final String id) {
@@ -28,7 +29,7 @@ public class UserController {
 
     // 사용자 등록
     @PostMapping(value = "/user")
-    public JSONResponse<String> createUser(@RequestBody Map<String,Object> paramMap) {
+    public JSONResponse<String> createUser(@RequestParam Map<String,Object> paramMap) {
         return userService.createUser(paramMap);
     }
 

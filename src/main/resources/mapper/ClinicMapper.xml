@@ -3,16 +3,25 @@
 
 <mapper namespace="com.joss.bundaegi.mapper.ClinicMapper">
     <select id="getClinicByDistance" parameterType="map" resultType="com.joss.bundaegi.domain.ClinicDomain">
-        -- 주변 진료소 조회
+        -- 주변 진료소 조회 및 진료소 대기 COUNT 가져오기
         SELECT *,
         (6371*acos(cos(radians(${lat}))*cos(radians(clinic_lat))*cos(radians(clinic_lon)
         -radians(${lon}))+sin(radians(${lat}))*sin(radians(clinic_lat))))
-        AS distance
+        AS clinic_distance,
+        (SELECT COUNT(*) FROM linelog WHERE line_clinic_id = clinic_id AND line_state_id = 'WAIT'
+         AND DATE_FORMAT(line_date,'%Y%m%d') = DATE_FORMAT(NOW(),'%Y%m%d')
+        ) AS clinic_wait_count
         FROM clinic
-        HAVING distance <![CDATA[<=]]> ${distance} -- 거리(1 = 1km) 이내
-        ORDER BY distance
+        HAVING clinic_distance <![CDATA[<=]]> ${distance} -- 거리(1 = 1km) 이내
+        ORDER BY clinic_distance
     </select>
-
+    <select id="getClinicById" resultType="com.joss.bundaegi.domain.ClinicDomain">
+        -- 진료소 ID로 조회
+        SELECT *
+        FROM clinic
+        WHERE 1=1
+        AND clinic_id = #{clinicId}
+    </select>
     <update id="updateLocationInfo">
         -- UPDATE 보건소 정보
         UPDATE clinic

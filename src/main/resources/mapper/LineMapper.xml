@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.joss.bundaegi.mapper.LineMapper">
+    <select id="getMyWaitingCount" parameterType="map" resultType="int">
+        -- 해당 병원 내 앞의 대기자 수 조회
+        SELECT line_sequence - 1 AS waiting_count
+        FROM(
+            SELECT
+                @ROWNUM:= @ROWNUM+1 AS line_sequence,
+                line_user_id
+            FROM (SELECT @ROWNUM := 0) TEMP, linelog
+            WHERE 1=1
+                AND line_clinic_id = #{clinicId}
+                AND line_state_id = 'WAIT'
+                AND DATE_FORMAT(line_date,'%Y%m%d') = DATE_FORMAT(NOW(),'%Y%m%d')
+        ) LINE
+        WHERE 1=1 AND line_user_id = #{userId}
+    </select>
+    <select id="getMyWaitingClinic" resultType="com.joss.bundaegi.domain.ClinicDomain">
+        -- 나의 대기 현황 조회
+        SELECT A.* FROM clinic A
+        INNER JOIN linelog LOG ON line_clinic_id = clinic_id
+        WHERE 1 = 1
+        AND LOG.line_user_id = #{userId}
+        AND LOG.line_state_id = 'WAIT'
+        AND DATE_FORMAT(LOG.line_date,'%Y%m%d') = DATE_FORMAT(NOW(),'%Y%m%d')
+    </select>
+    <select id="isWaiting" parameterType="map" resultType="int">
+        SELECT COUNT(*)
+        FROM linelog
+        WHERE 1=1
+            AND DATE_FORMAT(line_date,'%Y%m%d') = DATE_FORMAT(NOW(),'%Y%m%d') -- 오늘 날짜 기준
+            AND line_state_id = 'WAIT'
+            AND line_user_id = #{userId}
+    </select>
+
+    <insert id="insertLine" parameterType="map">
+        -- 줄서기
+        INSERT INTO linelog(line_clinic_id, line_user_id, line_state_id, line_date)
+        SELECT #{clinicId} AS line_clinic_id
+        , user_id AS line_user_id
+        ,'WAIT' AS line_state_id
+        , NOW() AS line_date
+        FROM user
+        WHERE 1=1
+        AND user_id = #{userId}
+    </insert>
+
+    <update id="cancelLineState">
+        -- 줄서기 취소
+        UPDATE linelog
+        SET line_state_id = 'CANCEL'
+        WHERE 1 = 1
+        AND line_clinic_id = #{clinicId}
+        AND line_user_id = #{userId}
+        AND line_state_id = 'WAIT'
+    </update>
+
+    <update id="updateLineStateStart">
+        -- 줄서기 접수
+        UPDATE linelog
+        SET line_state_id = 'RECPT'
+        WHERE 1 = 1
+        AND line_clinic_id = #{clinicId}
+        AND line_user_id = #{userId}
+        AND line_state_id = 'WAIT'
+    </update>
+
+    <update id="updateLineStateEnd">
+        -- 줄서기 완료
+        UPDATE linelog
+        SET line_state_id = 'TREAT'
+        WHERE 1 = 1
+        AND line_clinic_id = #{clinicId}
+        AND line_user_id = #{userId}
+        AND line_state_id = 'RECPT'
+    </update>
+</mapper>

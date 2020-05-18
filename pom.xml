@@ -17,28 +17,28 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
-<!--        <activeProfile>local</activeProfile>-->
+        <!--        <activeProfile>local</activeProfile>-->
         <java.version>1.8</java.version>
         <finalName>${project.artifactId}</finalName>
     </properties>
-<!--    &lt;!&ndash; 프로파일 설정 &ndash;&gt;-->
-<!--    <profiles>-->
-<!--        <profile>-->
-<!--            <id>local</id>-->
-<!--            <activation>-->
-<!--                <activeByDefault>true</activeByDefault>-->
-<!--            </activation>-->
-<!--            <properties>-->
-<!--                <activeProfiles>local</activeProfiles>-->
-<!--            </properties>-->
-<!--        </profile>-->
-<!--        <profile>-->
-<!--            <id>prod</id>-->
-<!--            <properties>-->
-<!--                <activeProfiles>prod</activeProfiles>-->
-<!--            </properties>-->
-<!--        </profile>-->
-<!--    </profiles>-->
+    <!--    &lt;!&ndash; 프로파일 설정 &ndash;&gt;-->
+    <!--    <profiles>-->
+    <!--        <profile>-->
+    <!--            <id>local</id>-->
+    <!--            <activation>-->
+    <!--                <activeByDefault>true</activeByDefault>-->
+    <!--            </activation>-->
+    <!--            <properties>-->
+    <!--                <activeProfiles>local</activeProfiles>-->
+    <!--            </properties>-->
+    <!--        </profile>-->
+    <!--        <profile>-->
+    <!--            <id>prod</id>-->
+    <!--            <properties>-->
+    <!--                <activeProfiles>prod</activeProfiles>-->
+    <!--            </properties>-->
+    <!--        </profile>-->
+    <!--    </profiles>-->
 
     <dependencies>
         <dependency>
@@ -76,6 +76,24 @@
             <groupId>net.rakugakibox.util</groupId>
             <artifactId>yaml-resource-bundle</artifactId>
             <version>1.1</version>
+        </dependency>
+
+        <!-- jstl 라이브러리 (JSP를 사용하기 위해)-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+
+        <!-- 파일변경 자동반영 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+
+        <!-- JSP 서블릿 설정 -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
 
         <dependency>

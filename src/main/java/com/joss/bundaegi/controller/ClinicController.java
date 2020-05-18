@@ -34,10 +34,16 @@ public class ClinicController {
         return domain;
     }
 
+    // 진료소 ID로 조회
+    @GetMapping(value = "/clinic/{clinicId}")
+    public JSONResponse<ClinicDomain> getClinicById(@PathVariable(value = "clinicId") final String clinicId) {
+        return clinicService.getClinicById(clinicId);
+    }
+
     // 주변 진료소 조회
     @GetMapping(value = "/clinic/location/{distance}")
     public JSONResponse<List<ClinicDomain>> getLocationFromAddr(@PathVariable(value = "distance") final float distance,
-                                                                @RequestBody Map<String,Object> paramMap) {
+                                                                @RequestParam Map<String,Object> paramMap) {
         return clinicService.getClinicByDistance(paramMap,distance);
     }
 }
