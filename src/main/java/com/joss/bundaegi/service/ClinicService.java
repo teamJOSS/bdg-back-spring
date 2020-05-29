@@ -3,6 +3,7 @@ package com.joss.bundaegi.service;
 import com.joss.bundaegi.domain.ClinicDomain;
 import com.joss.bundaegi.domain.LocationDomain;
 import com.joss.bundaegi.domain.Response.JSONResponse;
+import com.joss.bundaegi.domain.RestException;
 import com.joss.bundaegi.mapper.ClinicMapper;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +26,10 @@ public class ClinicService {
             List<ClinicDomain> clinics = clinicMapper.getClinicByDistance(paramMap);
             System.out.println(clinics.size());
             if(clinics.size() > 0) response = new JSONResponse<>(1,"succ.select",clinics);
-            else throw new Exception();
+            else response = new JSONResponse<>(1,"succ.select.empty",null);
         }catch (Exception e){
-            response = new JSONResponse<>(0,"fail.select",null);
+            throw new RestException(0,"fail.select",e.getLocalizedMessage(),null);
+//            response = new JSONResponse<>(0,"fail.select",null);
         }
         return response;
     }
@@ -37,9 +39,10 @@ public class ClinicService {
         try{
             ClinicDomain clinic = clinicMapper.getClinicById(clinicId);
             if(clinic != null) response = new JSONResponse<>(1,"succ.select",clinic);
-            else throw new Exception();
+            else response = new JSONResponse<>(1,"succ.select.empty",null);
         }catch (Exception e){
-            response = new JSONResponse<>(0,"fail.select",null);
+            throw new RestException(0,"fail.select",e.getLocalizedMessage(),null);
+//            response = new JSONResponse<>(0,"fail.select",null);
         }
         return response;
     }

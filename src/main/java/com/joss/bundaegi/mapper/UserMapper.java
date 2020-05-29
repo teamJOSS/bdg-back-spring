@@ -15,4 +15,5 @@ public interface UserMapper {
     List<UserDomain> getAllUser();
     UserDomain getUser(String id);
     int createUser(Map<String,Object> paramMap);
+    UserDomain getLoginInfo(String userId, String userPassword);
 }

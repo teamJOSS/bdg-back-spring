@@ -33,24 +33,13 @@ public class LineController {
     // 줄서기
     @PostMapping(value = "/line/{clinicId}")
     public JSONResponse<Integer> insertLine(@PathVariable(value = "clinicId") String clinicId,
-                                            @RequestParam Map<String,Object> paramMap){
+                                            @RequestBody Map<String,Object> paramMap){
         return lineService.insertLine(clinicId,paramMap);
     }
     // 줄서기 취소
     @PatchMapping(value = "/line/{clinicId}")
     public JSONResponse<Integer> setLineStateCancel(@PathVariable(value = "clinicId") String clinicId,
-                                                    @RequestParam Map<String,Object> paramMap) {
+                                                    @RequestBody Map<String,Object> paramMap) {
         return lineService.cancelLineState(clinicId, paramMap);
     }
-
-//    // 줄서기 시작
-//    @PatchMapping(value = "/line/{clinicId}")
-//    public JSONResponse<Integer> setLineStateCancel(@PathVariable(value = "clinicId") String clinicId) {
-//        return lineService.cancelLineState()
-//    }
-//    // 줄서기 종료
-//    @PatchMapping(value = "/line/{clinicId}")
-//    public JSONResponse<Integer> setLineStateCancel(@PathVariable(value = "clinicId") String clinicId) {
-//        return lineService.cancelLineState()
-//    }
 }

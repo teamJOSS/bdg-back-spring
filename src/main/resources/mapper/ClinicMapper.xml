@@ -4,7 +4,15 @@
 <mapper namespace="com.joss.bundaegi.mapper.ClinicMapper">
     <select id="getClinicByDistance" parameterType="map" resultType="com.joss.bundaegi.domain.ClinicDomain">
         -- 주변 진료소 조회 및 진료소 대기 COUNT 가져오기
-        SELECT *,
+        SELECT clinic_id,
+        clinic_location,
+        clinic_work_time,
+        clinic_phone_number,
+        clinic_phone_number2,
+        clinic_name,
+        clinic_type,
+        clinic_lat,
+        clinic_lon,
         (6371*acos(cos(radians(${lat}))*cos(radians(clinic_lat))*cos(radians(clinic_lon)
         -radians(${lon}))+sin(radians(${lat}))*sin(radians(clinic_lat))))
         AS clinic_distance,
@@ -17,7 +25,15 @@
     </select>
     <select id="getClinicById" resultType="com.joss.bundaegi.domain.ClinicDomain">
         -- 진료소 ID로 조회
-        SELECT *
+        SELECT clinic_id,
+        clinic_location,
+        clinic_work_time,
+        clinic_phone_number,
+        clinic_phone_number2,
+        clinic_name,
+        clinic_type,
+        clinic_lat,
+        clinic_lon
         FROM clinic
         WHERE 1=1
         AND clinic_id = #{clinicId}

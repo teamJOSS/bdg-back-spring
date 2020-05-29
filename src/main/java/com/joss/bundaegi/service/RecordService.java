@@ -2,6 +2,7 @@ package com.joss.bundaegi.service;
 
 import com.joss.bundaegi.domain.RecordDomain;
 import com.joss.bundaegi.domain.Response.JSONResponse;
+import com.joss.bundaegi.domain.RestException;
 import com.joss.bundaegi.mapper.RecordMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,8 @@ public class RecordService {
             if(records.size() > 0) response = new JSONResponse<>(1,"succ.select",records);
             else response = new JSONResponse<>(1,"succ.record.empty",null);
         }catch (Exception e){
-            response = new JSONResponse<>(0,"fail.select",null);
+            throw new RestException(0,"fail.select",e.getLocalizedMessage(),null);
+//            response = new JSONResponse<>(0,"fail.select",null);
         }
         return response;
     }
@@ -36,7 +38,8 @@ public class RecordService {
             if(result == 1) response = new JSONResponse<>(1,"succ.insert",result);
             else throw new Exception();
         }catch (Exception e){
-            response = new JSONResponse<>(0,"fail.insert",0);
+            throw new RestException(0,"fail.insert",e.getLocalizedMessage(),null);
+//            response = new JSONResponse<>(0,"fail.insert",0);
         }
         return response;
     }
@@ -50,7 +53,8 @@ public class RecordService {
             else throw new Exception();
         }
         catch (Exception e){
-            response = new JSONResponse<>(0,"fail.record.update",0);
+            throw new RestException(0,"fail.record.update",e.getLocalizedMessage(),null);
+//            response = new JSONResponse<>(0,"fail.record.update",0);
         }
         return response;
     }

@@ -1,11 +1,13 @@
 package com.joss.bundaegi.controller;
 
+import com.joss.bundaegi.domain.Jwt.JwtRequest;
+import com.joss.bundaegi.domain.RestException;
 import com.joss.bundaegi.domain.UserDomain;
 import com.joss.bundaegi.domain.Response.JSONResponse;
 import com.joss.bundaegi.service.UserService;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Map;
 
@@ -29,13 +31,13 @@ public class UserController {
 
     // 사용자 등록
     @PostMapping(value = "/user")
-    public JSONResponse<String> createUser(@RequestParam Map<String,Object> paramMap) {
+    public JSONResponse<String> createUser(@RequestBody Map<String,Object> paramMap) {
         return userService.createUser(paramMap);
     }
 
-//    // @TODO 로그인 조회
-//    @GetMapping(value = "/login/{id,password}")
-//    public JSONResponse<List<UserDomain>> getLoginInfo() {
-//        return commonService.getLoginInfo();
-//    }
+    // 로그인
+    @PostMapping(value = "/user/login")
+    public JSONResponse login(@RequestBody JwtRequest authenticationRequest){
+        return userService.getLoginInfo(authenticationRequest);
+    }
 }

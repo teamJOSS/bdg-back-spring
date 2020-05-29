@@ -2,6 +2,7 @@ package com.joss.bundaegi.service;
 
 import com.joss.bundaegi.domain.LocationDomain;
 import com.joss.bundaegi.domain.Response.JSONResponse;
+import com.joss.bundaegi.domain.RestException;
 import com.joss.bundaegi.domain.UserDomain;
 import com.joss.bundaegi.mapper.CommonMapper;
 import org.json.simple.JSONArray;
@@ -31,7 +32,8 @@ public class CommonService {
             if(locationInfo.getCode() == 1) response = new JSONResponse<>(1,"succ.select.addr",locationInfo);
             else throw new Exception();
         }catch (Exception e){
-            response = new JSONResponse<>(0,"fail.select.addr",null);
+            throw new RestException(0,"fail.select.addr",e.getLocalizedMessage(),null);
+            //response = new JSONResponse<>(0,"fail.select.addr",null);
         }
         return response;
     }

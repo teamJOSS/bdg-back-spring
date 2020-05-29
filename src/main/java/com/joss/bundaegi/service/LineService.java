@@ -2,11 +2,16 @@ package com.joss.bundaegi.service;
 
 import com.joss.bundaegi.domain.ClinicDomain;
 import com.joss.bundaegi.domain.Response.JSONResponse;
+import com.joss.bundaegi.domain.RestException;
 import com.joss.bundaegi.mapper.LineMapper;
+import org.apache.ibatis.binding.BindingException;
+import org.apache.ibatis.executor.result.ResultMapException;
+import org.apache.ibatis.type.TypeException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.net.BindException;
 import java.util.Map;
 
 @Service
@@ -23,22 +28,30 @@ public class LineService {
             if(clinic != null) response = new JSONResponse<>(1,"succ.select",clinic);
             else response = new JSONResponse<>(1,"succ.line.my.empty",null);
         }catch (Exception e){
-            response = new JSONResponse<>(0,"fail.select",null);
+            throw new RestException(0,"fail.select",e.getLocalizedMessage(),null);
+//            response = new JSONResponse<>(0,"fail.select",null);
         }
         return response;
     }
 
-    // 대기 순번 조회
+    // 나의 대기 순번 조회
     public JSONResponse<Integer> getMyWaitingCount(String clinicId, Map<String,Object> paramMap){
         JSONResponse<Integer> response;
         try{
             paramMap.put("clinicId", clinicId);
             int seq = lineMapper.getMyWaitingCount(paramMap);
             System.out.println("결과값 " + seq);
-            if(seq >= 0) response = new JSONResponse<>(1,"succ.line",seq);
+            if(seq > 0) response = new JSONResponse<>(1,"succ.line",seq);
             else response = new JSONResponse<>(1,"succ.line.empty",seq);
-        }catch (Exception e){
-            response = new JSONResponse<>(0,"fail.select",null);
+        }
+        catch (BindingException e){
+            response = new JSONResponse<>(1,"succ.line.my.empty",null);
+//            response = new JSONResponse<>(0,"fail.select",null);
+        }
+        catch (Exception e){
+            System.out.println("Exception");
+            throw new RestException(0,"fail.select",e.getLocalizedMessage(),null);
+//            response = new JSONResponse<>(0,"fail.select",null);
         }
         return response;
     }
@@ -53,7 +66,8 @@ public class LineService {
             else throw new Exception();
         }
         catch (Exception e){
-            response = new JSONResponse<>(0,"fail.line.cancel",null);
+            throw new RestException(0,"fail.line.cancel",e.getLocalizedMessage(),null);
+            // response = new JSONResponse<>(0,"fail.line.cancel",null);
         }
         return response;
     }
@@ -66,14 +80,15 @@ public class LineService {
             if(isWaiting == 0) {
                 paramMap.put("clinicId", clinicId);
                 int result = lineMapper.insertLine(paramMap);
+                if(result == 0) throw new Exception();
                 response = new JSONResponse<>(1,"succ.line.insert",result);
                 System.out.println("시작 결과 " + result);
-                if(result == 0) throw new Exception();
             }
             else response = new JSONResponse<>(1,"succ.line.busy",0);
         }
         catch (Exception e){
-            response = new JSONResponse<>(0,"fail.line.insert",0);
+            throw new RestException(0,"fail.line.insert",e.getLocalizedMessage(),null);
+            // response = new JSONResponse<>(0,"fail.line.insert",0);
         }
         return response;
     }

@@ -24,7 +24,7 @@ public class NoticeController {
 
     // 공지사항 저장
     @PostMapping(value = "/notice")
-    public JSONResponse<Integer> createNoticeInfo(@RequestParam Map<String,Object> paramMap){
+    public JSONResponse<Integer> createNoticeInfo(@RequestBody Map<String,Object> paramMap){
         return noticeService.createNoticeInfo(paramMap);
     }
 

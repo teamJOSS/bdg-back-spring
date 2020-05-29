@@ -19,7 +19,17 @@
     </select>
     <select id="getMyWaitingClinic" resultType="com.joss.bundaegi.domain.ClinicDomain">
         -- 나의 대기 현황 조회
-        SELECT A.* FROM clinic A
+        SELECT
+        clinic_id,
+        clinic_location,
+        clinic_work_time,
+        clinic_phone_number,
+        clinic_phone_number2,
+        clinic_name,
+        clinic_type,
+        clinic_lat,
+        clinic_lon
+        FROM clinic A
         INNER JOIN linelog LOG ON line_clinic_id = clinic_id
         WHERE 1 = 1
         AND LOG.line_user_id = #{userId}

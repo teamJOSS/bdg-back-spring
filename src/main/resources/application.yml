@@ -16,6 +16,9 @@ spring:
     livereload:
       enabled: true
 
+jwt :
+  secret: bundaegi
+
 mybatis:
   type-aliases-package: com.joss.bundaegi/mapper
   mapper-locations: com.joss.bundaegi/mapper/*.xml
